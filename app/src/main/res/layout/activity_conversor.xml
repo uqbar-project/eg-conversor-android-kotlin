@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/conversor_millas_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/millas"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/conversor_millas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/millas"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/conversor_convertir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="convertir"
+        android:padding="10dp"
+        android:text="@string/convertir" />
+
+    <TextView
+        android:id="@+id/conversor_kilometros_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/kilometros"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/conversor_kilometros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/kilometros" />
+
+</LinearLayout>
