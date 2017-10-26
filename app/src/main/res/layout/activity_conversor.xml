@@ -39,6 +39,8 @@
         android:id="@+id/conversor_kilometros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="#0B173B"
         android:hint="@string/kilometros" />
 
 </LinearLayout>
