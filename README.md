@@ -11,9 +11,9 @@ El [enunciado](http://algo3.uqbar-project.org/material/ejemplos/dominios/convers
 ## El proyecto
 Este proyecto está generado para
 
-* Android Studio 2.2 (Septiembre 2016)
-* con Gradle 2.14.1 (el que viene con Android Studio)
-* para una SDK 24 (Nougat)
+* Android Studio 3.0.0 (Septiembre 2017)
+* con Gradle 3.0.0 (el que viene con Android Studio)
+* para una SDK 26 (Nougat)
 * en Kotlin (hay que descargarlo siguiendo [estos pasos](https://kotlinlang.org/docs/tutorials/kotlin-android.html))
 
 ## La arquitectura MVC
