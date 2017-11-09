@@ -15,6 +15,7 @@ Este proyecto está generado para
 * con Gradle 3.0.0 (el que viene con Android Studio)
 * para una SDK 26 (Oreo)
 * en Kotlin (hay que descargarlo siguiendo [estos pasos](https://kotlinlang.org/docs/tutorials/kotlin-android.html))
+* aprovechamos las [Kotlin Android Extensions](https://antonioleiva.com/kotlin-android-extensions/)
 
 ## La arquitectura MVC
 
