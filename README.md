@@ -226,10 +226,10 @@ Y vemos reflejado en la vista el cambio:
 1. Hacer la conversión a medida que se escribe el valor en el texto (Tip: ver http://stacktips.com/tutorials/android/android-textwatcher-example)
 1. Ubicar todos los controles en una sola línea
 1. Ubicar los controles en 2 columnas
-  *. fila 1 columna 1 el input
-  *. fila 1 columna 2 dice "millas"
-  *. fila 2 columna 1 botón convertir
-  *. fila 2 columna 2 tiene el TextView
+  * fila 1 columna 1 el input
+  * fila 1 columna 2 dice "millas"
+  * fila 2 columna 1 botón convertir
+  * fila 2 columna 2 tiene el TextView
 1. Reemplazar el TextView de kilómetros por un EditText para que se pueda convertir de millas a kilómetros o viceversa.
 
 
