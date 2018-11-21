@@ -167,7 +167,7 @@ Mientras que en Arena la estrategia para agregar comportamiento es trabajar con 
 Y... todo es más burocrático. Pasamos a verlo en el `ConversorActivity.kt`:
 
 ~~~kt
-override fun onClick(view: View?) {
+override fun onClick(view: View) {
     try {
         val millas = conversor_millas.text.toString()
         if (millas.trim().equals("")) {
