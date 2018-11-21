@@ -160,6 +160,79 @@ class ConversorActivity : AppCompatActivity(), View.OnClickListener {
     }
 ```
 
+Mientras que en Arena la estrategia para agregar comportamiento es trabajar con template methods, es decir, dejar métodos vacíos para que el desarrollador incorpore código de su funcionalidad específica, en Android se trabaja redefiniendo el comportamiento default, lo que nos obliga a llamar siempre al onCreate de la superclase.
+
+## Qué pasa cuando no hay binding
+
+Y... todo es más burocrático. Pasamos a verlo en el `ConversorActivity.kt`:
+
+```kotlin
+override fun onClick(view: View?) {
+    try {
+        val millas = conversor_millas.text.toString()
+        if (millas.trim().equals("")) {
+            Toast.makeText(this.getApplicationContext(), "Debe ingresar un valor", Toast.LENGTH_LONG).show()
+            return
+        }
+        conversor.millas = java.lang.Double.valueOf(millas)
+        conversor.convertir()
+        conversor_kilometros.text = conversor.kilometrosAsString()
+    } catch (e: NumberFormatException) {
+        Toast.makeText(this.getApplicationContext(), "Debe ingresar un valor numérico", Toast.LENGTH_LONG).show();
+    }
+}
+```
+
+El controller debe encargarse de
+
+* referenciar al EditText valorOrigen y obtener el valor ingresado por el usuario, ubicado en la propiedad text
+* convertirlo de string a número
+* delegar la conversión al modelo
+* tomar el resultado de la conversión (un número) y convertirlo a string
+* y finalmente ese string hay que ubicarlo en la propiedad text del TextView que muestra el resultado
+
+El lector podría decir: ¿tanto escándalo por 5 líneas? Claro, esto es solo para mostrar un ejemplo didáctico. Conforme vayamos agregando campos y haya relaciones entre éstos, el controller agrega líneas dramáticamente.
+
+## Filters
+
+Si queremos escribir un caracter en el dispositivo, vemos que ese tipo de input está deshabilitado, porque en la definición del control EditText definimos que el input es numérico:
+
+```xml
+<EditText
+    android:id="@+id/conversor_millas"
+    android:hint="@string/millas"
+    ...
+    android:inputType="numberDecimal" />
+```
+
+_activity_conversor.xml_
+
+## Jugando un poco con la vista
+
+Podemos cambiar la propiedad de los controles EditText, Button y TextView, para que en lugar de utilizar el mínimo tamaño posible (wrap_content) tomen el ancho de la pantalla (match_parent):
+
+```xml
+android:layout_width="match_parent"
+```
+
+Y vemos reflejado en la vista el cambio:
+
+![layout change](image/layoutChange.png)
+
+## Actividades para el curioso
+
+1. Cambiar el look & feel para utilizar una pantalla con el fondo negro y las letras en blanco (lo que se conoce como Dark Theme o Inverse)
+1. Cambiar el TextView para que utilice un recuadro de color y el texto con otro color
+1. Hacer la conversión a medida que se escribe el valor en el texto (Tip: ver http://stacktips.com/tutorials/android/android-textwatcher-example)
+1. Ubicar todos los controles en una sola línea
+1. Ubicar los controles en 2 columnas
+  *. fila 1 columna 1 el input
+  *. fila 1 columna 2 dice "millas"
+  *. fila 2 columna 1 botón convertir
+  *. fila 2 columna 2 tiene el TextView
+1. Reemplazar el TextView de kilómetros por un EditText para que se pueda convertir de millas a kilómetros o viceversa.
+
+
 # Testing
 
 * en la carpeta test encontrarás [un archivo de testeo unitario del conversor](app/src/test/java/ar/edu/uqbar/conversorappkot/ConversorUnitTest.kt)
