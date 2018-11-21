@@ -166,7 +166,7 @@ Mientras que en Arena la estrategia para agregar comportamiento es trabajar con 
 
 Y... todo es más burocrático. Pasamos a verlo en el `ConversorActivity.kt`:
 
-```kt
+~~~kt
 override fun onClick(view: View?) {
     try {
         val millas = conversor_millas.text.toString()
@@ -181,7 +181,7 @@ override fun onClick(view: View?) {
         Toast.makeText(this.getApplicationContext(), "Debe ingresar un valor numérico", Toast.LENGTH_LONG).show();
     }
 }
-```
+~~~
 
 El controller debe encargarse de
 
@@ -217,7 +217,7 @@ android:layout_width="match_parent"
 
 Y vemos reflejado en la vista el cambio:
 
-![layout change](image/layoutChange.png)
+![layout change](images/layoutChange.png)
 
 ## Actividades para el curioso
 
