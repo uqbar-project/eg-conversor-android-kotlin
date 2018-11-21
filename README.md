@@ -223,7 +223,7 @@ Y vemos reflejado en la vista el cambio:
 
 1. Cambiar el look & feel para utilizar una pantalla con el fondo negro y las letras en blanco (lo que se conoce como Dark Theme o Inverse)
 2. Cambiar el TextView para que utilice un recuadro de color y el texto con otro color
-3. Hacer la conversión a medida que se escribe el valor en el texto (Tip: ver http://stacktips.com/tutorials/android/android-textwatcher-example)
+3. Hacer la conversión a medida que se escribe el valor en el texto (Tip: ver [este tutorial](http://stacktips.com/tutorials/android/android-textwatcher-example))
 4. Ubicar todos los controles en una sola línea
 5. Ubicar los controles en 2 columnas
     1. fila 1 columna 1 el input
