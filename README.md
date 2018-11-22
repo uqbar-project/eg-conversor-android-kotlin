@@ -133,7 +133,7 @@ Esto mismo podemos definirlo en forma visual, aunque suele resultar más tedioso
 </resources>
 ```
 
-TODO: Hacer una demo breve de cómo crearlo
+![externalize string](video/externalizeString.gif)
 
 # El controller (la Activity)
 
