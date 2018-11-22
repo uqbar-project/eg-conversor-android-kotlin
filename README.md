@@ -133,6 +133,8 @@ Esto mismo podemos definirlo en forma visual, aunque suele resultar más tedioso
 </resources>
 ```
 
+En este video vemos cómo se puede hacer en un IDE como Android Studio, para no tener que hacerlo a mano (con Alt + Enter se activan los quick fixes, como el Ctrl + 1 en Eclipse):
+
 ![externalize string](video/externalizeString.gif)
 
 # El controller (la Activity)
