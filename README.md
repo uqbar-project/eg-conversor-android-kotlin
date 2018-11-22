@@ -4,10 +4,6 @@
 
 Es la primera aplicación básica, nos sirve como ejemplo introductorio.
 
-# Enunciado
-
-El [enunciado](http://algo3.uqbar-project.org/material/ejemplos/dominios/conversor) plantea algunas variantes.
-
 # El proyecto
 Este proyecto está generado para
 
@@ -42,7 +38,7 @@ El concepto que equivale a pantalla o página es actividad, que se define
 * en forma visual
 * o bien en forma declarativa, a partir de un xml
 
-También podemos crear o configurar elementos en forma programática, utilizando el lenguaje de programación de la SDK (en nuestro caso Java).
+También podemos crear o configurar elementos en forma programática, utilizando el lenguaje de programación de la SDK (en nuestro caso [Kotlin](https://kotlinlang.org/)).
 
 Tenemos que aprender a ubicarnos en un proyecto Android, donde tendremos como carpetas:
 
@@ -137,6 +133,8 @@ Esto mismo podemos definirlo en forma visual, aunque suele resultar más tedioso
 </resources>
 ```
 
+TODO: Hacer una demo breve de cómo crearlo
+
 # El controller (la Activity)
 
 La vista no tiene comportamiento, sólo define cómo se disponen los elementos visuales en un layout. El controller trabaja sobre el comportamiento de la vista, definiendo
@@ -145,15 +143,21 @@ La vista no tiene comportamiento, sólo define cómo se disponen los elementos v
 * cómo se relacionan los widgets con su correspondiente modelo
 * cómo responder ante los eventos de usuario
 
-Esto se resuelve con una clase java (o eventualmente Xtend o Kotlin), en nuestro caso ActivityConversor que hereda de android.app.Activity. 
+Esto se resuelve con una clase Kotlin, en nuestro caso ActivityConversor que hereda de android.app.Activity (o AppCompatActivity).
 
 Para incorporar el comportamiento del botón "Convertir" le pedimos al ActivityConversor que implemente la interfaz onClickListener y además debemos implementar el método `onCreate`:
 
 ```kotlin
+// clase NombreDeLaClase : AlgunConstructorDeLaSuperclase, InterfacesQueImplementa
+// los dos puntos marcan una relación de generalización (herencia), como en AppCompatActivity invocando
+//    al constructor default,
+// o de realización (implementa), como en el segundo caso
 class ConversorActivity : AppCompatActivity(), View.OnClickListener {
     val conversor = Conversor()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    // fun define un método o function, equivalente a def de Xtend
+    // los parámetros opcionales se terminan con un ?
+    override fun onCreate(savedInstanceState: Bundle) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conversor)
         conversor_convertir.setOnClickListener(this)
@@ -185,7 +189,7 @@ override fun onClick(view: View) {
 
 El controller debe encargarse de
 
-* referenciar al EditText valorOrigen y obtener el valor ingresado por el usuario, ubicado en la propiedad text
+* referenciar al EditText valorOrigen y obtener el valor ingresado por el usuario, ubicado en la propiedad text (al menos no es necesario como en la versión hermana de Java buscar el elemento conversor_millas y castearlo a EditText)
 * convertirlo de string a número
 * delegar la conversión al modelo
 * tomar el resultado de la conversión (un número) y convertirlo a string
