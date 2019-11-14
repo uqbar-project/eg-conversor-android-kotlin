@@ -2,15 +2,10 @@ package ar.edu.uqbar.conversorappkot
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
-import java.text.DecimalFormat
 import kotlinx.android.synthetic.main.activity_conversor.*
-import android.widget.TextView
-import ar.edu.uqbar.conversorappkot.R.string.convertir
-import android.widget.EditText
-import ar.edu.uqbar.conversorappkot.R.id.conversor_convertir
+import java.text.DecimalFormat
 
 
 class Conversor {

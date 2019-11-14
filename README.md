@@ -27,7 +27,7 @@ Ese estado se representa con un objeto **Conversor** que tiene:
 
 * un **valor origen**
 * el **valor convertido** a la unidad de medida de destino
-* y un método **BigDecimal convertir()**, que retorna el resulto de la conversión.
+* y un método **BigDecimal convertir()**, que retorna el resultado de la conversión.
 
 ## La vista
 
@@ -149,12 +149,12 @@ Esto se resuelve con una clase Kotlin, en nuestro caso ActivityConversor que her
 
 Para incorporar el comportamiento del botón "Convertir" le pedimos al ActivityConversor que implemente la interfaz onClickListener y además debemos implementar el método `onCreate`:
 
-```kotlin
+```kt
 // clase NombreDeLaClase : AlgunConstructorDeLaSuperclase, InterfacesQueImplementa
 // los dos puntos marcan una relación de generalización (herencia), como en AppCompatActivity invocando
 //    al constructor default,
 // o de realización (implementa), como en el segundo caso
-class ConversorActivity : AppCompatActivity(), View.OnClickListener {
+class ConversorActivity : Activity(), View.OnClickListener {
     val conversor = Conversor()
 
     // fun define un método o function, equivalente a def de Xtend
@@ -172,7 +172,7 @@ Mientras que en Arena la estrategia para agregar comportamiento es trabajar con 
 
 Y... todo es más burocrático. Pasamos a verlo en el `ConversorActivity.kt`:
 
-~~~kt
+```kt
 override fun onClick(view: View) {
     try {
         val millas = conversor_millas.text.toString()
@@ -187,11 +187,20 @@ override fun onClick(view: View) {
         Toast.makeText(this.getApplicationContext(), "Debe ingresar un valor numérico", Toast.LENGTH_LONG).show();
     }
 }
-~~~
+```
+
+A partir de esta vista:
+
+```xml
+<EditText
+        android:id="@+id/conversor_millas"
+>
+```
+
 
 El controller debe encargarse de
 
-* referenciar al EditText valorOrigen y obtener el valor ingresado por el usuario, ubicado en la propiedad text (al menos no es necesario como en la versión hermana de Java buscar el elemento conversor_millas y castearlo a EditText)
+* referenciar al EditText conversor_millas y obtener el valor ingresado por el usuario, ubicado en la propiedad text. `conversor_millas.text.toString` ocurre porque nosotros definimos en la vista ese nombre:
 * convertirlo de string a número
 * delegar la conversión al modelo
 * tomar el resultado de la conversión (un número) y convertirlo a string

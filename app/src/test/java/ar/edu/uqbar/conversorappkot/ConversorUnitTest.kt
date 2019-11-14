@@ -11,7 +11,6 @@ import org.junit.Test
  */
 class ConversorUnitTest {
     val conversor = Conversor()
-    val conversorVacio = Conversor()
 
     @Before
     fun init() {
@@ -20,19 +19,17 @@ class ConversorUnitTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun conversionEmptyConverter() {
+        val conversorVacio = Conversor()
         assertEquals(0.0, conversorVacio.kilometros, 0.01)
     }
 
     @Test
-    @Throws(Exception::class)
     fun conversionHappyPath() {
         assertEquals(160.9344, conversor.kilometros, 0.01)
     }
 
     @Test
-    @Throws(Exception::class)
     fun conversionToStringHappyPath() {
         assertEquals("160,934", conversor.kilometrosAsString())
     }
